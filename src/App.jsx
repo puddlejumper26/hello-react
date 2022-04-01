@@ -1,13 +1,12 @@
-import Count from "./container/Count";
-import Person from "./container/Person";
-import store from "./redux/store";
+import React, { useState } from "react";
 
 export default function App() {
+  const [count, setCount] = useState(0);
+
   return (
-    <div className="App">
-      <Count store={store} />
-      <hr />
-      <Person store={store} />
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );
 }
